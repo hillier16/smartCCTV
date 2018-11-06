@@ -9,7 +9,7 @@ response = s3.list_buckets()
 buckets = [bucket['Name'] for bucket in response['Buckets']]
 print("Bucket List: %s" % buckets)
 
-# # S3 file upload
-# bucket_name = 'smartcctv'
-# file_name = '1.py'
-# s3.upload_file(file_name, bucket_name, file_name)
+ # S3 file upload
+bucket_name = 'smartcctv'
+file_name = '1.py'
+s3.upload_file(file_name, bucket_name, file_name)
