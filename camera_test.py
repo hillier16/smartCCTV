@@ -1,10 +1,22 @@
 import cv2
+import numpy as np
+from matplotlib import pyplot
 
-cap = cv2.VideoCapture(0)
-while True:
+cap = cv2.VideoCapture(-1)
+
+while cap.isOpened():
     ret, frame = cap.read()
-    cv2.imshow('image', frame)
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if ret == False:
+        continue
+
+    b,g,r = cv2.split(frame)
+    frame = cv2.merge([r,g,b])
+    pyplot.imshow(frame)
+    print("imshow fuck")
+    
+    key = cv2.waitKey(0) & 0XFF
+    if key == ord('q'):
         break
-    cap.release()
-    cv2.destroyAllWindows()
+    
+cap.release()
+cv2.destroyAllWindows()
