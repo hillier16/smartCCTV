@@ -14,7 +14,7 @@ if(cap.isOpened()!=True):
     
 sched = BackgroundScheduler()
 sched.start()
-sched.add_job(new.Video_Start, 'interval', minutes=1, id="test_1", args=[cap])
+sched.add_job(new.Video_Start, 'interval', seconds=10, id="test_1", args=[cap])
 
 while True:
     try:
