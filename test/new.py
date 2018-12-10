@@ -6,10 +6,11 @@ import boto3
 videoname = ""
 
 def Video_Start(cap):
+    print("Video start,,,")
     global videoname
     # timer setting
     start = datetime.datetime.now()
-    end = start + datetime.timedelta(seconds=59)
+    end = start + datetime.timedelta(seconds=58)
     nowDatetime = start.strftime('%Y-%m-%d_%H:%M:%S')
     videoname = nowDatetime+'.avi'
     print(nowDatetime)
